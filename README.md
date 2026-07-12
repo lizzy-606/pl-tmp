@@ -1,8 +1,8 @@
 # TMP — Tokenizer Morphological Profile
 
-**Author:** Elżbieta Dawidek · ORCID 0009-0000-0433-6095
-**Version:** 0.2.0 · July 2026
-**Licenses:** code — Apache-2.0 · data and documentation — CC BY 4.0
+**Author:** Elżbieta Dawidek · ORCID 0009-0000-0433-6095  
+**Version:** 0.2.0 · July 2026  
+**Licenses:** code — Apache-2.0 · data and documentation — CC BY 4.0  
 
 An open diagnostic tool for measuring how a tokenizer behaves at morpheme boundaries in an inflectional language. Polish is the validation material; the metrics are not specific to Polish.
 
