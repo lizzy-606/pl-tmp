@@ -22,7 +22,18 @@ The remaining 15.5% were forms in which the root string does not appear on the s
 
 The dataset now records, per form: the surface stem and its length, the lexeme-level root, the alternation type where one applies, and flags for suppletion and analytic forms. Alternation and suppletion are not scored against the tokenizer — they are performed by the language, not by the segmentation.
 
-**Status.** Results are being recomputed. A corrected version of the preprint will follow.
+**Corrected results (2026-07-12).**
+
+| Tokenizer | MFL | SI % (was) | ISS % (was) |
+|---|---|---|---|
+| HerBERT BPE-PL | 1.22 | **85.8** (84.5) | **3.8** (0.0) |
+| XLM-R Unigram | 1.66 | **85.8** (84.5) | **29.2** (56.2) |
+| mBERT WordPiece | 2.45 | **43.3** (84.5) | **37.7** (47.9) |
+| GPT-2 BPE-EN | 3.91 | **13.3** (68.0) | **70.8** (41.7) |
+
+SI now discriminates. The tie at 84.5% is gone, and two findings follow that the faulty implementation could not have produced: stem destruction tracks fragmentation across the range, and the most fragmenting tokenizer records the highest ISS. Both are discussed in the README.
+
+**Status.** A corrected version of the preprint will follow.
 
 ---
 
