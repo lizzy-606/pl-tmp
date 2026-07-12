@@ -1,0 +1,5 @@
+﻿tokenizer,MFL,SI_pct,ISS_pct,n_forms_SI,n_forms_ISS
+HerBERT_BPE_PL,1.22,85.8,3.8,120,106
+mBERT_WordPiece,2.45,43.3,37.7,120,106
+XLM-R_Unigram,1.66,85.8,29.2,120,106
+GPT2_BPE_EN,3.91,13.3,70.8,120,106
