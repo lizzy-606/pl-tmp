@@ -1,8 +1,8 @@
 # TMP — Tokenizer Morphological Profile
 
-**Author:** Elżbieta Dawidek · ORCID 0009-0000-0433-6095  
-**Version:** 0.2.0 · July 2026  
-**Licenses:** code — Apache-2.0 · data and documentation — CC BY 4.0  
+**Author:** Elżbieta Dawidek · ORCID 0009-0000-0433-6095
+**Version:** 0.2.0 · July 2026
+**Licenses:** code — Apache-2.0 · data and documentation — CC BY 4.0
 
 An open diagnostic tool for measuring how a tokenizer behaves at morpheme boundaries in an inflectional language. Polish is the validation material; the metrics are not specific to Polish.
 
@@ -67,9 +67,40 @@ Analytic forms (`będę czytać`) are excluded from SI and ISS. They are two ort
 
 ## Results
 
-Being recomputed. See `CHANGELOG.md` — the SI implementation used for the results published in the preprint below was found to be incorrect, and has been rewritten.
+Four tokenizers, 121 paradigm cells. Corrected implementation, July 2026.
 
-MFL is unaffected by that correction.
+| Tokenizer | Architecture | Training corpus | MFL | SI % | ISS % |
+|---|---|---|---|---|---|
+| HerBERT BPE-PL | BPE | Polish (mono) | 1.22 | 85.8 | 3.8 |
+| XLM-R Unigram | Unigram LM | multilingual | 1.66 | 85.8 | 29.2 |
+| mBERT WordPiece | WordPiece | multilingual | 2.45 | 43.3 | 37.7 |
+| GPT-2 BPE-EN | BPE | English (mono) | 3.91 | 13.3 | 70.8 |
+
+Reproduce with `python metrics.py`. Per-form output is in `results_forms.csv`.
+
+**Fragmentation and stem destruction move together.** A tokenizer at MFL 1.22 or 1.66 keeps the stem intact in 85.8% of forms. At 2.45 that falls to 43.3%; at 3.91 to 13.3%. Above roughly two tokens per form, fragmentation stops being merely verbose and starts cutting through morphological boundaries. This was earlier proposed as a hypothesis on the basis of MFL alone; SI now supports it independently.
+
+**The worst tokenizer has the best ISS.** GPT-2 separates the inflectional ending in 70.8% of forms — more often than any other — while destroying the stem in 86.7% of them. It hits the morpheme boundary because it cuts almost everywhere. ISS read on its own would rank it first. This is the clearest available demonstration that the three metrics are a profile and not a scoreboard.
+
+## Two identical scores, two different tokenizers
+
+HerBERT and XLM-R both score SI = 85.8%. Both cut the stem in exactly 17 of 121 cells.
+
+They are not the same 17. The two sets overlap in three forms.
+
+| | HerBERT (Polish, mono) | XLM-R (multilingual) |
+|---|---|---|
+| **cuts the stem in** | past tense 2nd/3rd person (`czytała`, `czytałaś`)<br>conditional (`czytałabym`, `pisałabym`)<br>plural noun endings (`mamom`, `mamami`, `domami`) | infinitives (`czytać`, `pisać`, `mówić`, `iść`)<br>present tense with alternation (`piszę`, `piszą`)<br>suppletive past stems (`szłam`, `szedł`) |
+
+Two tokenizers with the same aggregate score and almost disjoint failure patterns.
+
+This is the reason the per-form output matters. An aggregate percentage answers *how often* a tokenizer cuts the stem; it cannot answer *where*, and two tokenizers that behave nothing alike can land on the same number. A morphological profile therefore needs the per-form data, not three percentages.
+
+Any downstream claim — that a tokenizer damages the conditional, or the infinitive, or suppletive paradigms — is invisible at the level of the score and visible in `results_forms.csv`.
+
+## Correction
+
+The SI implementation used for the results in the preprint below was incorrect: it reconstructed the form from its tokens and searched for the root as a substring, which always succeeds. See `CHANGELOG.md`. MFL is unaffected, and the central claims resting on it stand.
 
 ## Run it
 
