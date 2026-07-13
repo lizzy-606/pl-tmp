@@ -1,0 +1,58 @@
+cff-version: 1.2.0
+message: "If you use TMP, please cite it as below."
+type: software
+title: "TMP — Tokenizer Morphological Profile"
+abstract: >-
+  An open diagnostic tool for measuring where a tokenizer places its
+  boundaries relative to morpheme boundaries in an inflectional language.
+  Three metrics are read together as a profile: SI (Stem Integrity), the
+  percentage of forms in which no token boundary falls inside the stem;
+  ISS (Inflectional Suffix Separation), the percentage of forms with an
+  overt ending in which a boundary falls exactly at the stem/ending
+  boundary; and MFL (Mean Fragmentation per Lexeme), the mean number of
+  tokens per form aggregated per lexeme. Boundaries are read from
+  character offsets supplied by fast tokenizers, which makes the metrics
+  robust to byte-level encoding of diacritics. Polish is the validation
+  material; the metrics are not specific to Polish. The repository
+  includes a hand-annotated dataset of 10 Polish lexemes in full
+  inflectional paradigms (121 paradigm cells, 109 unique surface forms),
+  the reference implementation, and profiles for four tokenizers
+  (HerBERT, XLM-R, mBERT, GPT-2).
+version: 0.2.0
+date-released: 2026-07-13
+authors:
+  - family-names: Dawidek
+    given-names: Elżbieta
+    orcid: "https://orcid.org/0009-0000-0433-6095"
+    affiliation: "Uniwersytet DSW Ideis, Wrocław, Poland"
+    email: plgram.benchmarks@proton.me
+repository-code: "https://github.com/lizzy-606/pl-tmp"
+license:
+  - Apache-2.0
+  - CC-BY-4.0
+license-url: "https://github.com/lizzy-606/pl-tmp/blob/main/LICENSE"
+keywords:
+  - tokenization
+  - subword segmentation
+  - morphology
+  - inflectional languages
+  - morphologically rich languages
+  - Polish
+  - language model evaluation
+  - diagnostic metrics
+references:
+  - type: article
+    title: >-
+      Inflectional Paradigms as a Diagnostic Tool for Tokenizers in
+      Morphologically Rich Languages: A Proposal for a Linguistic Benchmark
+    authors:
+      - family-names: Dawidek
+        given-names: Elżbieta
+        orcid: "https://orcid.org/0009-0000-0433-6095"
+    year: 2026
+    doi: 10.31235/osf.io/tqvuf_v1
+    url: "https://doi.org/10.31235/osf.io/tqvuf_v1"
+    notes: >-
+      Proposes the metrics. The SI implementation reported in that
+      version is superseded by the corrected implementation in this
+      repository; see CHANGELOG.md. MFL is unaffected.
