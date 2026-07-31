@@ -153,15 +153,23 @@ def main():
         w.writeheader()
         w.writerows(rows)
 
-    # profile
+# profile
     prof = []
     for name in toks:
-        ns = [r[f"{name}__n"] for r in rows]
         si = [r[f"{name}__SI"] for r in rows if r[f"{name}__SI"] != ""]
         iss = [r[f"{name}__ISS"] for r in rows if r[f"{name}__ISS"] != ""]
+
+        # MFL is a mean of per-lexeme means, not a flat mean over all cells.
+        # A flat mean over-weights lexemes with more paradigm cells
+        # (e.g. through syncretism); grouping first removes that bias.
+        by_lexeme = defaultdict(list)
+        for r in rows:
+            by_lexeme[r["lexeme"]].append(r[f"{name}__n"])
+        lexeme_means = [sum(v) / len(v) for v in by_lexeme.values()]
+
         prof.append({
             "tokenizer": name,
-            "MFL": round(sum(ns) / len(ns), 2),
+            "MFL": round(sum(lexeme_means) / len(lexeme_means), 2),
             "SI_pct": round(100 * si.count("1") / len(si), 1),
             "ISS_pct": round(100 * iss.count("1") / len(iss), 1),
             "n_forms_SI": len(si),
