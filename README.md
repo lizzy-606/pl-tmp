@@ -115,10 +115,16 @@ To profile your own tokenizer, add it to the `TOKENIZERS` dictionary in `metrics
 
 ## Related preprint
 
-Dawidek, E. (2026). *Inflectional Paradigms as a Diagnostic Tool for Tokenizers in Morphologically Rich Languages: A Proposal for a Linguistic Benchmark.* SocArXiv.
-https://doi.org/10.31235/osf.io/tqvuf_v1
+The Limits of BPE Tokenization in Polish: Segmentation, Inflectional Forms, Grammatical Anchoring, and First-Person Stability in Inflectional Language Models
+https://osf.io/preprints/socarxiv/7exa6_v3
+Inflectional Paradigms as a Diagnostic Tool for Tokenizers in Morphologically Rich Languages: A Proposal for a Linguistic Benchmark
+https://osf.io/preprints/socarxiv/tqvuf_v3
+Toward Morphologically-Aware Tokenization for Inflectional Languages: A Structural Hypothesis
+https://osf.io/preprints/socarxiv/6sj8d_v4
+Beyond Task Performance: Morphological Branching as a Diagnostic Metric for Polish Inflectional Language Models
+https://osf.io/preprints/socarxiv/a4wd9_v1
 
-The preprint proposes the metrics. This repository implements them, supplies the data, and carries the correction.
+Supplementary materials, datasets, benchmark documentation, and related technical resources are also available on OSF and GitHub.
 
 ## Relation to PL-GGE and PL-IPE
 
