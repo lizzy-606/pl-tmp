@@ -115,14 +115,17 @@ To profile your own tokenizer, add it to the `TOKENIZERS` dictionary in `metrics
 
 ## Related preprint
 
-The Limits of BPE Tokenization in Polish: Segmentation, Inflectional Forms, Grammatical Anchoring, and First-Person Stability in Inflectional Language Models
-https://osf.io/preprints/socarxiv/7exa6_v3 
-Inflectional Paradigms as a Diagnostic Tool for Tokenizers in Morphologically Rich Languages: A Proposal for a Linguistic Benchmark
-https://osf.io/preprints/socarxiv/tqvuf_v3 
-Toward Morphologically-Aware Tokenization for Inflectional Languages: A Structural Hypothesis
-https://osf.io/preprints/socarxiv/6sj8d_v4 
-Beyond Task Performance: Morphological Branching as a Diagnostic Metric for Polish Inflectional Language Models
-https://osf.io/preprints/socarxiv/a4wd9_v1 
+1. **The Limits of BPE Tokenization in Polish: Segmentation, Inflectional Forms, Grammatical Anchoring, and First-Person Stability in Inflectional Language Models**  
+   https://osf.io/preprints/socarxiv/7exa6_v3
+
+2. **Inflectional Paradigms as a Diagnostic Tool for Tokenizers in Morphologically Rich Languages: A Proposal for a Linguistic Benchmark**  
+   https://osf.io/preprints/socarxiv/tqvuf_v3
+
+3. **Toward Morphologically-Aware Tokenization for Inflectional Languages: A Structural Hypothesis**  
+   https://osf.io/preprints/socarxiv/6sj8d_v4
+
+4. **Beyond Task Performance: Morphological Branching as a Diagnostic Metric for Polish Inflectional Language Models**  
+   https://osf.io/preprints/socarxiv/a4wd9_v1
 
 Supplementary materials, datasets, benchmark documentation, and related technical resources are also available on OSF and GitHub.
 
