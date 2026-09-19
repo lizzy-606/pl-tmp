@@ -1,35 +1,18 @@
 # TMP — Tokenizer Morphological Profile
 
-**Author:** Elżbieta Dawidek · ORCID 0009-0000-0433-6095  
+**Author:** Elżbieta Dawidek · ORCID: [0009-0000-0433-6095](https://orcid.org/0009-0000-0433-6095)  
 **Version:** 0.2.0 · July 2026  
-**Licenses:** code — Apache-2.0 · data and documentation — CC BY 4.0  
+**Licenses:** code — Apache-2.0 · data and documentation — CC BY 4.0
 
-## Preprint Series
+An open diagnostic tool for measuring how a tokenizer behaves at morpheme boundaries in an inflectional language. Polish is the validation material; the metrics are not specific to Polish.
+
+Everything here is open: the data, the code, and the results. Nothing is gated. A held-out test set would make no sense for this task — a tokenizer is frozen and cannot learn from the items it is measured on.
 
 [![Part I](https://img.shields.io/badge/Part%20I-submitted%20APR%202026-B31B1B.svg)](https://doi.org/10.31235/osf.io/7exa6)
 [![Part II](https://img.shields.io/badge/Part%20II-submitted%20MAY%202026-2F80ED.svg)](https://doi.org/10.31235/osf.io/tqvuf)
 [![Part III](https://img.shields.io/badge/Part%20III-submitted%20MAY%202026-6F42C1.svg)](https://doi.org/10.31235/osf.io/6sj8d)
 [![Part IV](https://img.shields.io/badge/Part%20IV-submitted%20JUN%202026-22863A.svg)](https://doi.org/10.31235/osf.io/a4wd9)
-![Part V](https://img.shields.io/badge/Part%20V-manuscript%20JUL%202026-orange.svg)
-
-1. **The Limits of BPE Tokenization in Polish: Segmentation-Flexional Forms, Grammatical Anchoring, and First-Person Stability in Inflectional Language Models**  
-   SocArXiv: https://doi.org/10.31235/osf.io/7exa6
-
-2. **Inflectional Paradigms as a Diagnostic Tool for Tokenizers in Morphologically Rich Languages: A Proposal for a Linguistic Benchmark**  
-   SocArXiv: https://doi.org/10.31235/osf.io/tqvuf
-
-3. **Toward Morphologically-Aware Tokenization for Inflectional Languages**  
-   SocArXiv: https://doi.org/10.31235/osf.io/6sj8d
-
-4. **Beyond Task Performance: Morphological Branching as a Diagnostic Metric for Polish Inflectional Language Models**  
-   SocArXiv: https://doi.org/10.31235/osf.io/a4wd9
-
-5. **Morphological Ladder as Pre-tokenization Foundation: A Structural Hypothesis for Inflectional Language Modeling**  
-   Manuscript submitted in July 2026; not published by SocArXiv.
-
-An open diagnostic tool for measuring how a tokenizer behaves at morpheme boundaries in an inflectional language. Polish is the validation material; the metrics are not specific to Polish.
-
-Everything here is open: the data, the code, and the results. Nothing is gated. A held-out test set would make no sense for this task — a tokenizer is frozen and cannot learn from the items it is measured on.
+![Part V](https://img.shields.io/badge/Part%20V-working%20paper%20JUL%202026-orange.svg)
 
 ---
 
@@ -61,6 +44,7 @@ For every form in the dataset, the surface stem is recorded together with its le
 form           c z y t a ł a m
 index         0 1 2 3 4 5 6 7 8
 stem          |—————————|            stem = "czyta", stem_len = 5
+
 ```
 
 A token boundary is a character index at which one token ends and the next begins.
@@ -92,11 +76,11 @@ Analytic forms (`będę czytać`) are excluded from SI and ISS. They are two ort
 
 Four tokenizers, 121 paradigm cells. Corrected implementation, July 2026.
 
-| Tokenizer | Architecture | Training corpus | MFL | SI % | ISS % |
-|---|---|---|---|---|---|
+| Tokenizer | Architecture | Training corpus | MFL | SI (%) | ISS (%) |
+|---|---|---|---:|---:|---:|
 | HerBERT BPE-PL | BPE | Polish (mono) | 1.22 | 85.8 | 3.8 |
-| XLM-R Unigram | Unigram LM | multilingual | 1.66 | 85.8 | 29.2 |
-| mBERT WordPiece | WordPiece | multilingual | 2.45 | 43.3 | 37.7 |
+| XLM-R Unigram | Unigram LM | Multilingual | 1.66 | 85.8 | 29.2 |
+| mBERT WordPiece | WordPiece | Multilingual | 2.45 | 43.3 | 37.7 |
 | GPT-2 BPE-EN | BPE | English (mono) | 3.91 | 13.3 | 70.8 |
 
 Reproduce with `python metrics.py`. Per-form output is in `results_forms.csv`.
@@ -113,7 +97,7 @@ They are not the same 17. The two sets overlap in three forms.
 
 | | HerBERT (Polish, mono) | XLM-R (multilingual) |
 |---|---|---|
-| **cuts the stem in** | past tense 2nd/3rd person (`czytała`, `czytałaś`)<br>conditional (`czytałabym`, `pisałabym`)<br>plural noun endings (`mamom`, `mamami`, `domami`) | infinitives (`czytać`, `pisać`, `mówić`, `iść`)<br>present tense with alternation (`piszę`, `piszą`)<br>suppletive past stems (`szłam`, `szedł`) |
+| **Cuts the stem in** | Past tense 2nd/3rd person (`czytała`, `czytałaś`)<br>Conditional (`czytałabym`, `pisałabym`)<br>Plural noun endings (`mamom`, `mamami`, `domami`) | Infinitives (`czytać`, `pisać`, `mówić`, `iść`)<br>Present tense with alternation (`piszę`, `piszą`)<br>Suppletive past stems (`szłam`, `szedł`) |
 
 Two tokenizers with the same aggregate score and almost disjoint failure patterns.
 
@@ -130,27 +114,31 @@ The SI implementation used for the results in the preprint below was incorrect: 
 ```
 pip install transformers
 python metrics.py
+
 ```
 
 Writes `results_forms.csv` (per form) and `results_profile.csv` (per tokenizer).
 
 To profile your own tokenizer, add it to the `TOKENIZERS` dictionary in `metrics.py`. Any tokenizer with a fast implementation will work.
 
-## Related preprint
+## Research background: preprint series
 
-1. **The Limits of BPE Tokenization in Polish: Segmentation, Inflectional Forms, Grammatical Anchoring, and First-Person Stability in Inflectional Language Models**  
-   https://osf.io/preprints/socarxiv/7exa6_v3
+1. **The Limits of BPE Tokenization in Polish: Segmentation-Flexional Forms, Grammatical Anchoring, and First-Person Stability in Inflectional Language Models**  
+   SocArXiv · submitted April 2026 · [DOI: 10.31235/osf.io/7exa6](https://doi.org/10.31235/osf.io/7exa6)
 
 2. **Inflectional Paradigms as a Diagnostic Tool for Tokenizers in Morphologically Rich Languages: A Proposal for a Linguistic Benchmark**  
-   https://osf.io/preprints/socarxiv/tqvuf_v3
+   SocArXiv · submitted May 2026 · [DOI: 10.31235/osf.io/tqvuf](https://doi.org/10.31235/osf.io/tqvuf)
 
-3. **Toward Morphologically-Aware Tokenization for Inflectional Languages: A Structural Hypothesis**  
-   https://osf.io/preprints/socarxiv/6sj8d_v4
+3. **Toward Morphologically-Aware Tokenization for Inflectional Languages**  
+   SocArXiv · submitted May 2026 · [DOI: 10.31235/osf.io/6sj8d](https://doi.org/10.31235/osf.io/6sj8d)
 
 4. **Beyond Task Performance: Morphological Branching as a Diagnostic Metric for Polish Inflectional Language Models**  
-   https://osf.io/preprints/socarxiv/a4wd9_v1
+   SocArXiv · submitted June 2026 · [DOI: 10.31235/osf.io/a4wd9](https://doi.org/10.31235/osf.io/a4wd9)
 
-Supplementary materials, datasets, benchmark documentation, and related technical resources are also available on OSF and GitHub.
+5. **Morphological Ladder as Pre-tokenization Foundation: A Structural Hypothesis for Inflectional Language Modeling**  
+   Working paper · July 2026. Add a repository link here after placing the manuscript in `docs/`.
+
+Supplementary materials, datasets, benchmark documentation, and related technical resources are available on OSF and GitHub.
 
 ## Relation to PL-GGE and PL-IPE
 
@@ -165,8 +153,8 @@ Different object, different logic, different access model. TMP is open precisely
 
 ## Contact
 
-plgram.benchmarks@proton.me
+[plgram.benchmarks@proton.me](mailto\:plgram.benchmarks@proton.me)
 
 ---
 
-*Licensing: code under Apache-2.0 (`LICENSE-CODE`); data and documentation under CC BY 4.0 (`LICENSE`).*
+*Licensing: code under Apache-2.0 (**`LICENSE-CODE`**); data and documentation under CC BY 4.0 (**`LICENSE`**).*
