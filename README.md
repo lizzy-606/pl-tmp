@@ -1,3 +1,9 @@
+# TMP — Tokenizer Morphological Profile
+
+**Author:** Elżbieta Dawidek · ORCID 0009-0000-0433-6095  
+**Version:** 0.2.0 · July 2026  
+**Licenses:** code — Apache-2.0 · data and documentation — CC BY 4.0  
+
 ## Preprint Series
 
 [![Part I](https://img.shields.io/badge/Part%20I-submitted%20APR%202026-B31B1B.svg)](https://doi.org/10.31235/osf.io/7exa6)
@@ -20,12 +26,6 @@
 
 5. **Morphological Ladder as Pre-tokenization Foundation: A Structural Hypothesis for Inflectional Language Modeling**  
    Manuscript submitted in July 2026; not published by SocArXiv.
-
-# TMP — Tokenizer Morphological Profile
-
-**Author:** Elżbieta Dawidek · ORCID 0009-0000-0433-6095  
-**Version:** 0.2.0 · July 2026  
-**Licenses:** code — Apache-2.0 · data and documentation — CC BY 4.0  
 
 An open diagnostic tool for measuring how a tokenizer behaves at morpheme boundaries in an inflectional language. Polish is the validation material; the metrics are not specific to Polish.
 
