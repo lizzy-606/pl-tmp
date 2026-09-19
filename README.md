@@ -122,21 +122,21 @@ To profile your own tokenizer, add it to the `TOKENIZERS` dictionary in `metrics
 
 ## Research background: preprint series
 
-1. **The Limits of BPE Tokenization in Polish: Segmentation-Flexional Forms, Grammatical Anchoring, and First-Person Stability in Inflectional Language Models**
+1. **The Limits of BPE Tokenization in Polish: Segmentation-Flexional Forms, Grammatical Anchoring, and First-Person Stability in Inflectional Language Models**  
    First submitted to SocArXiv in April 2026 · [DOI: 10.31235/osf.io/7exa6](https://doi.org/10.31235/osf.io/7exa6_v3)
    Mirrored on arXiv in 2026 · [arXiv:2609.17553](https://arxiv.org/abs/2609.17553)
 
-2. **Inflectional Paradigms as a Diagnostic Tool for Tokenizers in Morphologically Rich Languages: A Proposal for a Linguistic Benchmark**
+2. **Inflectional Paradigms as a Diagnostic Tool for Tokenizers in Morphologically Rich Languages: A Proposal for a Linguistic Benchmark**  
    SocArXiv · submitted May 2026 · [DOI: 10.31235/osf.io/tqvuf](https://doi.org/10.31235/osf.io/tqvuf_v2)
 
-3. **Toward Morphologically-Aware Tokenization for Inflectional Languages**
+3. **Toward Morphologically-Aware Tokenization for Inflectional Languages**  
    SocArXiv · submitted May 2026 · [DOI: 10.31235/osf.io/6sj8d](https://doi.org/10.31235/osf.io/6sj8d_v4)
 
-4. **Beyond Task Performance: Morphological Branching as a Diagnostic Metric for Polish Inflectional Language Models**
+4. **Beyond Task Performance: Morphological Branching as a Diagnostic Metric for Polish Inflectional Language Models**  
    SocArXiv · submitted June 2026 · [DOI: 10.31235/osf.io/a4wd9](https://doi.org/10.31235/osf.io/a4wd9_v1)
 
-5. **Morphological Ladder as Pre-tokenization Foundation: A Structural Hypothesis for Inflectional Language Modeling**
-   Submitted to SocArXiv, July 2026 · rejected as out of scope (SocArXiv accepts social-science research only; not a review of content) · manuscript available on request.
+5. **Morphological Ladder as Pre-tokenization Foundation: A Structural Hypothesis for Inflectional Language Modeling**  
+   Submitted to SocArXiv, July 2026 · rejected as out of scope (SocArXiv accepts social-science research only; not a review of content) 
 
 Supplementary materials, datasets, benchmark documentation, and related technical resources are available on OSF and GitHub.
 
