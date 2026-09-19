@@ -9,6 +9,7 @@ An open diagnostic tool for measuring how a tokenizer behaves at morpheme bounda
 Everything here is open: the data, the code, and the results. Nothing is gated. A held-out test set would make no sense for this task — a tokenizer is frozen and cannot learn from the items it is measured on.
 
 [![Part I](https://img.shields.io/badge/Part%20I-submitted%20APR%202026-B31B1B.svg)](https://doi.org/10.31235/osf.io/7exa6)
+[![arXiv mirror](https://img.shields.io/badge/Part%20I-arXiv%20mirror%202026-B31B1B.svg)](https://arxiv.org/abs/2609.17553)
 [![Part II](https://img.shields.io/badge/Part%20II-submitted%20MAY%202026-2F80ED.svg)](https://doi.org/10.31235/osf.io/tqvuf)
 [![Part III](https://img.shields.io/badge/Part%20III-submitted%20MAY%202026-6F42C1.svg)](https://doi.org/10.31235/osf.io/6sj8d)
 [![Part IV](https://img.shields.io/badge/Part%20IV-submitted%20JUN%202026-22863A.svg)](https://doi.org/10.31235/osf.io/a4wd9)
@@ -124,7 +125,8 @@ To profile your own tokenizer, add it to the `TOKENIZERS` dictionary in `metrics
 ## Research background: preprint series
 
 1. **The Limits of BPE Tokenization in Polish: Segmentation-Flexional Forms, Grammatical Anchoring, and First-Person Stability in Inflectional Language Models**  
-   SocArXiv · submitted April 2026 · [DOI: 10.31235/osf.io/7exa6](https://doi.org/10.31235/osf.io/7exa6)
+   First submitted to SocArXiv in April 2026 · [DOI: 10.31235/osf.io/7exa6](https://doi.org/10.31235/osf.io/7exa6)  
+   Mirrored on arXiv in 2026 · [arXiv:2609.17553](https://arxiv.org/abs/2609.17553)
 
 2. **Inflectional Paradigms as a Diagnostic Tool for Tokenizers in Morphologically Rich Languages: A Proposal for a Linguistic Benchmark**  
    SocArXiv · submitted May 2026 · [DOI: 10.31235/osf.io/tqvuf](https://doi.org/10.31235/osf.io/tqvuf)
