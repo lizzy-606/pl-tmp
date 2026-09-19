@@ -1,3 +1,26 @@
+## Preprint Series
+
+[![Part I](https://img.shields.io/badge/Part%20I-submitted%20APR%202026-B31B1B.svg)](https://doi.org/10.31235/osf.io/7exa6)
+[![Part II](https://img.shields.io/badge/Part%20II-submitted%20MAY%202026-2F80ED.svg)](https://doi.org/10.31235/osf.io/tqvuf)
+[![Part III](https://img.shields.io/badge/Part%20III-submitted%20MAY%202026-6F42C1.svg)](https://doi.org/10.31235/osf.io/6sj8d)
+[![Part IV](https://img.shields.io/badge/Part%20IV-submitted%20JUN%202026-22863A.svg)](https://doi.org/10.31235/osf.io/a4wd9)
+![Part V](https://img.shields.io/badge/Part%20V-manuscript%20JUL%202026-orange.svg)
+
+1. **The Limits of BPE Tokenization in Polish: Segmentation-Flexional Forms, Grammatical Anchoring, and First-Person Stability in Inflectional Language Models**  
+   SocArXiv: https://doi.org/10.31235/osf.io/7exa6
+
+2. **Inflectional Paradigms as a Diagnostic Tool for Tokenizers in Morphologically Rich Languages: A Proposal for a Linguistic Benchmark**  
+   SocArXiv: https://doi.org/10.31235/osf.io/tqvuf
+
+3. **Toward Morphologically-Aware Tokenization for Inflectional Languages**  
+   SocArXiv: https://doi.org/10.31235/osf.io/6sj8d
+
+4. **Beyond Task Performance: Morphological Branching as a Diagnostic Metric for Polish Inflectional Language Models**  
+   SocArXiv: https://doi.org/10.31235/osf.io/a4wd9
+
+5. **Morphological Ladder as Pre-tokenization Foundation: A Structural Hypothesis for Inflectional Language Modeling**  
+   Manuscript submitted in July 2026; not published by SocArXiv.
+
 # TMP — Tokenizer Morphological Profile
 
 **Author:** Elżbieta Dawidek · ORCID 0009-0000-0433-6095  
